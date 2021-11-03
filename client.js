@@ -7,8 +7,13 @@ const connect = function () {
     port: '50541'
   });
 
-  conn.on('data', (end) => {
-    console.log(end.toString());
+  conn.on('connect', () => {
+    console.log('Connection succesful.')
+    conn.write('Name: CHU');
+  })
+
+  conn.on('data', (data) => {
+    console.log(data.toString());
   });
 
   // interpret incoming data as text
@@ -20,4 +25,6 @@ const connect = function () {
 console.log("Connecting ...");
 connect();
 
-module.exports = connect;
+module.exports = {
+  connect,
+}
