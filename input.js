@@ -18,6 +18,12 @@ const handleUserInput = (key) => {
   if (key === 'd'){
     connection.write('Move: right');
   }
+  if (key === '1'){
+    connection.write('Say: Eat my dust');
+  }
+  if (key === '2'){
+    connection.write('Say: rekt');
+  }
 };
 
 const setupInput = (conn) => {
